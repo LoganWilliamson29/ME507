@@ -14,7 +14,7 @@
 struct Motor
 {
 	TIM_HandleTypeDef* 		htim;			/* HAL Handle struct for PWM Timer*/
-	GPIO_TypeDef* 			GPIO_PH;		/* GPIO direction control pin port*/
+	GPIO_TypeDef* 			GPIO_PH;		/* GPIO direction control pin*/
 	uint16_t 				GPIO_PH_Pin;	/* Pin number associated with GPIO_PH directon control pin*/
 	uint32_t				TIM_EN;			/* Timer PWM duty cycle control pin*/
 
