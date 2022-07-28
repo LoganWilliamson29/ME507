@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SumoBot/Core/DRV8876.c&apos; to &apos;DRV8876.cpp&apos;" description="Rename resource &apos;DRV8876.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/DRV8876.c" name="DRV8876.cpp" stamp="1659032874492" updateReferences="true"/>
+</session>
