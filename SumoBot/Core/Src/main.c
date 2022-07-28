@@ -90,11 +90,20 @@ int main(void)
 
   /* USER CODE BEGIN Init */
   //Initialize Motor Structures' Parameters
-   motor1 = (Motor_t){.htim=&htim3,
-	   	   	   	   	  .tim_ch_PH=TIM_CHANNEL_1,
-					  .tim_ch_b=TIM_CHANNEL_2,
-					  .EN_GPIO=GPIOA,.EN_Pin=GPIO_PIN_9,
-					  .level=level};
+   motor1 = motor(&htim3,
+		   	   	  TIM_CHANNEL_1,
+	   	   	 	  GPIOA,
+				  GPIO_PIN_5,
+				  GPIOA,
+				  GPIO_PIN_
+				  level);
+   motor(TIM_HandleTypeDef* _htim,
+   			 uint16_t			_TIM_EN,
+   		  	 GPIO_TypeDef* 	 	_GPIO_PH,
+   			 uint16_t			_GPIO_PH_Pin,
+   			 GPIO_TypeDef*		_nSLEEP,
+   			 uint16_t			_nSLEEP_Pin,
+   			 int16_t            _level);
    motor2 = (Motor_t){.htim=&htim3,
 	   	   	   	      .tim_ch_a=TIM_CHANNEL_3,
 					  .tim_ch_b=TIM_CHANNEL_4,

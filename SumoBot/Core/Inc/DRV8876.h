@@ -23,21 +23,22 @@ private:
 	uint16_t				TIM_EN;				// Timer PWM duty cycle control pin
 	GPIO_TypeDef* 			nSLEEP;				// HAL Handle struct for GPIO Port
 	uint16_t 				nSLEEP_Pin;	   		// Pin number associated with EN GPIO pin
+
 public:
-		motor(void);							// Prototype for default constructor
-		motor(TIM_HandleTypeDef* _htim,			// Prototype for initializing constructor
-			  GPIO_TypeDef* 	 _GPIO_PH,
-			  uint16_t			 _GPIO_PH_Pin,
-			  uint16_t			 _TIM_EN,
-			  GPIO_TypeDef*		 _nSLEEP,
-			  uint16_t			 _nSLEEP_Pin,
-			  int16_t            _level);
-	int8_t 					level;				//Signed 8-bit PWM (scaled-down) duty cycle
-} typedef Motor_t;
+			motor(void);							// Prototype for default constructor
+			motor(TIM_HandleTypeDef* 	_htim,		// Prototype for initializing constructor
+				  uint16_t				_TIM_EN,
+				  GPIO_TypeDef* 		_GPIO_PH,
+				  uint16_t				_GPIO_PH_Pin,
+				  GPIO_TypeDef*			_nSLEEP,
+				  uint16_t				_nSLEEP_Pin,
+				  int16_t         		_level);
+	void	enable(Motor_t* motor);					// Prototype for motor enable method
+	void	disable(Motor_t* motor);				// Prototype for motor disable method
+	void	set_level(Motor_t* motor,int32_t level);// Prototype for motor PWM pin duty cycle setting method
+	int16_t 				level;					//Signed 16-bit PWM (scaled-down) level from -4800 to 4800
+};
 
-void	enable(Motor_t* motor);
-void	disable(Motor_t* motor);
-void	set_level(Motor_t* motor,int32_t level);
 
-#endif /* INC_MOTOR_DRIVER_H_ */
+
 #endif /* INC_DRV8876_H_ */
