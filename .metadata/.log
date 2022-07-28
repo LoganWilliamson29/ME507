@@ -31,13 +31,26 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\logan\D
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-07-27 17:11:58.327
 !MESSAGE Started RMI Server, listening on port 41337
+<<<<<<< HEAD
+!SESSION 2022-07-28 10:13:23.261 -----------------------------------------------
+=======
 !SESSION 2022-07-28 11:11:48.850 -----------------------------------------------
+>>>>>>> origin/main
 eclipse.buildId=Version 1.9.0
 java.version=11.0.11
 java.vendor=AdoptOpenJDK
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
+<<<<<<< HEAD
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-07-28 10:13:36.099
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-07-28 10:13:36.181
+!MESSAGE Log4j initialized with config file C:\Data\School\2022 Summer_Fall\ME 507\ME 507 CODE\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-07-28 10:13:40.495
+=======
 !ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-07-28 11:11:54.116
 !MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
 
@@ -45,4 +58,5 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 !MESSAGE Log4j initialized with config file C:\Users\logan\Documents\Personal Documents\My Stuff\School Stuff\Classes\Summer 2022 Classes\ME 507 Repository\.metadata\.log4j.xml
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-07-28 11:11:58.802
+>>>>>>> origin/main
 !MESSAGE Started RMI Server, listening on port 41337
