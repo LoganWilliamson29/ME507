@@ -1,0 +1,31 @@
+/*
+ * DRV8876.h
+ *
+ *  Created on: Jul 27, 2022
+ *      Author: Logan Williamson
+ */
+
+#ifndef INC_DRV8876_H_
+#define INC_DRV8876_H_
+
+#include "stm32f4xx_hal.h"
+#include "stm32f4xx_hal_tim.h"
+
+struct Motor
+{
+	TIM_HandleTypeDef* 		htim;		/* HAL Handle struct for PWM Timer*/
+	uint32_t 				tim_ch_PH;	/* GPIO direction control pin*/
+	uint32_t 				tim_ch_EN;	/* Timer PWM duty cycle control channel pin*/
+
+	GPIO_TypeDef* 			EN_GPIO;	/* HAL Handle struct for GPIO Port*/
+	uint16_t 				EN_Pin;	   	/* Pin number associated with EN GPIO pin*/
+
+	int8_t 					level;		/*Signed 8-bit PWM (scaled-down) duty cycle*/
+} typedef Motor_t;
+
+void	enable(Motor_t* motor);
+void	disable(Motor_t* motor);
+void	set_level(Motor_t* motor,int32_t level);
+
+#endif /* INC_MOTOR_DRIVER_H_ */
+#endif /* INC_DRV8876_H_ */

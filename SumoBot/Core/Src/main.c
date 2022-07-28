@@ -41,6 +41,8 @@
 /* Private variables ---------------------------------------------------------*/
  ADC_HandleTypeDef hadc1;
 
+I2C_HandleTypeDef hi2c1;
+
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 
@@ -57,6 +59,7 @@ static void MX_ADC1_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_USART6_UART_Init(void);
+static void MX_I2C1_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -82,8 +85,37 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
+  //Initialize Motor Structures' Parameters
+   motor1 = (Motor_t){.htim=&htim3,
+	   	   	   	   	  .tim_ch_PH=TIM_CHANNEL_1,
+					  .tim_ch_b=TIM_CHANNEL_2,
+					  .EN_GPIO=GPIOA,.EN_Pin=GPIO_PIN_9,
+					  .level=level};
+   motor2 = (Motor_t){.htim=&htim3,
+	   	   	   	      .tim_ch_a=TIM_CHANNEL_3,
+					  .tim_ch_b=TIM_CHANNEL_4,
+					  .EN_GPIO=GPIOA,
+					  .EN_Pin=GPIO_PIN_10,
+					  .level=level};
+   motor3 = (Motor_t){.htim=&htim3,
+	   	   	   	      .tim_ch_a=TIM_CHANNEL_3,
+					  .tim_ch_b=TIM_CHANNEL_4,
+					  .EN_GPIO=GPIOA,
+					  .EN_Pin=GPIO_PIN_10,
+					  .level=level};
+   //Initialize Receiver Structure Parameters
+   receiver = (RC_t){.htim = &htim4,
+	   	   	   	   	 .STR_CH = TIM_CHANNEL_1,
+					 .THR_CH = TIM_CHANNEL_2,
+					 .THR_Edge = 0,
+					 .STR_Edge = 0,
+					 .STR_Val1 = 0,
+					 .STR_Val2=0,
+					 .STR_Width=0,
+					 .THR_Val1=0,
+					 .THR_Val2=0,
+					 .THR_Width=0};
+   /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
@@ -98,6 +130,7 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM2_Init();
   MX_USART6_UART_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -106,6 +139,29 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  //Set motor1 levels based on receiver pulse widths
+	  	  THR_lvl = 9.5427*receiver.THR_Width - 14495;
+	  	  STR_lvl = 9.3842*receiver.STR_Width - 14118;
+	  	  level_1 = THR_lvl - STR_lvl;
+	  	  level_2 = THR_lvl + STR_lvl;
+	  	  if ((level_1>700) | (level_1<-700))
+	  	  {
+	  	  set_level(&motor1, level_1);
+	  	  }
+	  	  if ((level_2>700) | (level_2<-700))
+	  	  {
+	  	  set_level(&motor2, level_2);
+	  	  }
+
+	  //Print receiver channel pulse widths at a frequency of 2Hz
+	  	  current_time = HAL_GetTick();
+	  	  if (current_time >= next_time)
+	  	  {
+	  		  mess_len = sprintf(mess, "Throttle level is %d\r\nSteering level is %d\r\n\n", receiver.THR_Width, receiver.STR_Width);
+	  		  HAL_UART_Transmit(&huart2,(uint8_t*) &mess, mess_len, 10);
+	  		  HAL_UART_Receive_IT(&huart2,(uint8_t*) &mess, 1);
+	  		  next_time = current_time+period;
+	  	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -130,10 +186,14 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 25;
+  RCC_OscInitStruct.PLL.PLLN = 192;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+  RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -143,12 +203,12 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
   {
     Error_Handler();
   }
@@ -175,7 +235,7 @@ static void MX_ADC1_Init(void)
   /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
   */
   hadc1.Instance = ADC1;
-  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
   hadc1.Init.ScanConvMode = DISABLE;
   hadc1.Init.ContinuousConvMode = DISABLE;
@@ -203,6 +263,40 @@ static void MX_ADC1_Init(void)
   /* USER CODE BEGIN ADC1_Init 2 */
 
   /* USER CODE END ADC1_Init 2 */
+
+}
+
+/**
+  * @brief I2C1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_I2C1_Init(void)
+{
+
+  /* USER CODE BEGIN I2C1_Init 0 */
+
+  /* USER CODE END I2C1_Init 0 */
+
+  /* USER CODE BEGIN I2C1_Init 1 */
+
+  /* USER CODE END I2C1_Init 1 */
+  hi2c1.Instance = I2C1;
+  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+  hi2c1.Init.OwnAddress1 = 0;
+  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+  hi2c1.Init.OwnAddress2 = 0;
+  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN I2C1_Init 2 */
+
+  /* USER CODE END I2C1_Init 2 */
 
 }
 
@@ -410,14 +504,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(LS2_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : PB6 PB7 */
-  GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF4_I2C1;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 }
 
