@@ -9,7 +9,7 @@
 #include "task.h"
 
 // List of the state functions
-task_fct_t task_list[]   = {&task_S0,
+task_fcn_t task_list[]   = {&task_S0,
 							&task_S1};
 
 // Create a struct to hold relevant information about the task

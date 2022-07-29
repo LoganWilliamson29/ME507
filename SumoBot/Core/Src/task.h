@@ -8,11 +8,14 @@
 #ifndef INC_TASK_H_
 #define INC_TASK_H_
 
+#include "stdio.h"
+
+
 // Structure for holding relevant information to the task
 typedef struct task_cfg
 {
-	int32_t state;
-	int32_t runs;
+	uint32_t state;
+	uint32_t runs;
 } task_cfg_t;
 
 // Datatype for pointers to task state functions
