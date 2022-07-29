@@ -1,16 +1,53 @@
-12:13:48 **** Incremental Build of configuration Debug for project SumoBot ****
+19:37:15 **** Incremental Build of configuration Debug for project SumoBot ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
-arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
-In file included from ../Core/Src/main.c:24:
-../Core/Inc/DRV8876.h:15:10: fatal error: iostream: No such file or directory
-   15 | #include <iostream>
-      |          ^~~~~~~~~~
-compilation terminated.
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/task.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/task.d" -MT"Core/Src/task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/task.o"
+In file included from ../Core/Src/task.cpp:9:
+../Core/Src/task.h:14:2: error: 'int32_t' does not name a type
+   14 |  int32_t state;
+      |  ^~~~~~~
+../Core/Src/task.h:15:2: error: 'int32_t' does not name a type
+   15 |  int32_t runs;
+      |  ^~~~~~~
+../Core/Src/task.cpp:12:1: error: 'task_fct_t' does not name a type; did you mean 'task_fcn_t'?
+   12 | task_fct_t task_list[]   = {&task_S0,
+      | ^~~~~~~~~~
+      | task_fcn_t
+../Core/Src/task.cpp: In function 'void task_init()':
+../Core/Src/task.cpp:21:7: error: 'task_cfg_t' {aka 'struct task_cfg'} has no member named 'state'
+   21 |  task.state = 0;
+      |       ^~~~~
+../Core/Src/task.cpp:22:7: error: 'task_cfg_t' {aka 'struct task_cfg'} has no member named 'runs'
+   22 |  task.runs = 0;
+      |       ^~~~
+../Core/Src/task.cpp: In function 'void task_run()':
+../Core/Src/task.cpp:28:2: error: 'task_list' was not declared in this scope; did you mean 'task_init'?
+   28 |  task_list[task.state]();
+      |  ^~~~~~~~~
+      |  task_init
+../Core/Src/task.cpp:28:17: error: 'task_cfg_t' {aka 'struct task_cfg'} has no member named 'state'
+   28 |  task_list[task.state]();
+      |                 ^~~~~
+../Core/Src/task.cpp:29:7: error: 'task_cfg_t' {aka 'struct task_cfg'} has no member named 'runs'
+   29 |  task.runs++;
+      |       ^~~~
+make: *** [Core/Src/subdir.mk:47: Core/Src/task.o] Error 1
 make: *** Waiting for unfinished jobs....
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:279,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.cpp:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:98:47: error: expected ')' before numeric constant
+   98 | #define GPIO_PIN_13                ((uint16_t)0x2000)  /* Pin 13 selected   */
+      |                                    ~          ^~~~~~
+../Core/Inc/main.h:90:20: note: in expansion of macro 'GPIO_PIN_13'
+   90 | #define nSLEEP_Pin GPIO_PIN_13
+      |                    ^~~~~~~~~~~
+../Core/Inc/DRV8876.h:24:15: note: in expansion of macro 'nSLEEP_Pin'
+   24 |  uint16_t     nSLEEP_Pin;      // Pin number associated with EN GPIO pin
+      |               ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
 "make -j12 all" terminated with exit code 2. Build might be incomplete.
 
-12:13:49 Build Failed. 3 errors, 0 warnings. (took 562ms)
+19:37:15 Build Failed. 12 errors, 0 warnings. (took 493ms)
 

@@ -1,0 +1,59 @@
+/*
+ * FLYSKY_GT3A.cpp
+ *
+ *  Created on: Jul 28, 2022
+ *      Author: Logan Williamson
+ */
+
+#include "FLYSKY_GT3A.h"
+#include "STM32F4xx_HAL.h"
+
+void Get_Widths(void)
+/*License
+ * Controllers Tech (2020) Measuring Pulse Width [Source Code]. https://controllerstech.com/input-capture-in-stm32/
+ */
+{
+	if (FlySky->htim->Channel==HAL_TIM_ACTIVE_CHANNEL_2)
+	{
+		if ((receiver->THR_Edge==0)&&(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_7))==1)
+		{
+			receiver->THR_Val1 = HAL_TIM_ReadCapturedValue(receiver->htim,receiver->THR_CH);
+			receiver->THR_Edge = 1;
+		}
+		else if ((receiver->THR_Edge==1)&&(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_7))==0)
+		{
+			receiver->THR_Val2 = HAL_TIM_ReadCapturedValue(receiver->htim,receiver->THR_CH);
+			if (receiver->THR_Val2 > receiver->THR_Val1)
+			{
+				receiver->THR_Width = (receiver->THR_Val2 - receiver->THR_Val1);
+			}
+			else if (receiver->THR_Val1 > receiver->THR_Val2)
+			{
+				receiver->THR_Width = ((0xffff - receiver->THR_Val1) + receiver->THR_Val2);
+			}
+			receiver->THR_Edge = 0;
+		}
+	}
+	if (FlySky->htim->Channel==HAL_TIM_ACTIVE_CHANNEL_1)
+	{
+		if ((receiver->STR_Edge==0)&&(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_6))==1)
+		{
+			receiver->STR_Val1 = HAL_TIM_ReadCapturedValue(receiver->htim,receiver->STR_CH);
+			receiver->STR_Edge = 1;
+		}
+		else if ((receiver->STR_Edge==1)&&(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_6))==0)
+		{
+			receiver->STR_Val2 = HAL_TIM_ReadCapturedValue(receiver->htim,receiver->STR_CH);
+			if (receiver->STR_Val2 > receiver->STR_Val1)
+			{
+				receiver->STR_Width = (receiver->STR_Val2 - receiver->STR_Val1);
+			}
+			else if (receiver->STR_Val1 > receiver->STR_Val2)
+			{
+				receiver->STR_Width = ((0xffff - receiver->STR_Val1) + receiver->STR_Val2);
+			}
+			receiver->STR_Edge = 0;
+		}
+	}
+
+}

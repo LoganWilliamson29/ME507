@@ -12,7 +12,6 @@
 #include "stm32f4xx_hal_tim.h"
 #include <stdint.h>
 #include <string.h>
-#include <iostream>
 
 class motor
 {
@@ -33,10 +32,10 @@ public:
 				  GPIO_TypeDef*			_nSLEEP,
 				  uint16_t				_nSLEEP_Pin,
 				  int16_t         		_level);
-	void	enable(Motor_t* motor);					// Prototype for motor enable method
-	void	disable(Motor_t* motor);				// Prototype for motor disable method
-	void	set_level(Motor_t* motor,int32_t level);// Prototype for motor PWM pin duty cycle setting method
-	int16_t 				level;					//Signed 16-bit PWM (scaled-down) level from -4800 to 4800
+	void	enable(void);					// Prototype for motor enable method
+	void	disable(void);				// Prototype for motor disable method
+	void	set_level(int32_t level);// Prototype for motor PWM pin duty cycle setting method
+	int32_t 				level;					//Signed 16-bit PWM (scaled-down) level from -4800 to 4800
 };
 
 
