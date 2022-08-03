@@ -9,7 +9,7 @@
 #define INC_AITRIP_IR_SENSOR_H_
 
 #include "stdio.h"
-
+#include "STM32F4xx_HAL.h"
 
 
 class IR_Sensor
@@ -18,8 +18,8 @@ private:
 	uint32_t 	trigPin;
 
 public:
-				IR_Sensor(void);		// Default constructor
-				IR_Sensor(uint32_t 	trigPin_);	// Initialization constructor
+	void 		IR_Sensor(void);		// Default constructor
+	void 		IR_Sensor(uint32_t 	trigPin_);	// Initialization constructor
 };
 
 

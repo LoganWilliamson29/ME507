@@ -1,3 +1,4 @@
+"./Core/Src/AITRIP_IR_Sensor.o"
 "./Core/Src/DRV8876.o"
 "./Core/Src/FLYSKY_GT3A.o"
 "./Core/Src/main.o"

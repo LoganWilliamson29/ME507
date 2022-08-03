@@ -1,7 +1,7 @@
-14:13:49 **** Incremental Build of configuration Debug for project SumoBot ****
+15:46:20 **** Incremental Build of configuration Debug for project SumoBot ****
 make -j16 all 
+arm-none-eabi-g++ "../Core/Src/AITRIP_IR_Sensor.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/AITRIP_IR_Sensor.d" -MT"Core/Src/AITRIP_IR_Sensor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/AITRIP_IR_Sensor.o"
 arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-g++ "../Core/Src/task.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/task.d" -MT"Core/Src/task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/task.o"
 In file included from ../Core/Inc/stm32f4xx_hal_conf.h:279,
                  from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
                  from ../Core/Inc/main.h:30,
@@ -15,5 +15,6 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:279,
 ../Core/Inc/DRV8876.h:24:15: note: in expansion of macro 'nSLEEP_Pin'
    24 |  uint16_t     nSLEEP_Pin;      // Pin number associated with EN GPIO pin
       |               ^~~~~~~~~~
-make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
 "make -j16 all" terminated with exit code 2. Build might be incomplete.

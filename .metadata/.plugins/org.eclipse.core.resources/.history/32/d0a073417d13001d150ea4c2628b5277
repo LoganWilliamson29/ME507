@@ -11,15 +11,14 @@
 #include "stdio.h"
 
 
-
 class IR_Sensor
 {
 private:
 	uint32_t 	trigPin;
 
 public:
-				IR_Sensor(void);		// Default constructor
-				IR_Sensor(uint32_t 	trigPin_);	// Initialization constructor
+	void 		IR_Sensor(void);		// Default constructor
+	void 		IR_Sensor(uint32_t 	trigPin_);	// Initialization constructor
 };
 
 

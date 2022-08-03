@@ -21,11 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "DRV8876.h"
-#include "FLYSKY_GT3A.h"
-#include "string.h"
-#include <stdio.h>
-#include <stdlib.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,12 +49,7 @@ TIM_HandleTypeDef htim3;
 UART_HandleTypeDef huart6;
 
 /* USER CODE BEGIN PV */
-int32_t THR_lvl = 0;
-int32_t STR_lvl =0;
-int32_t level_1 = 0;
-int32_t level_2 = 0;
-int32_t level_3 = 0;
-int32_t level_4 = 0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -70,50 +61,12 @@ static void MX_TIM2_Init(void);
 static void MX_USART6_UART_Init(void);
 static void MX_I2C1_Init(void);
 /* USER CODE BEGIN PFP */
-//Initialize Motor Structures' Parameters
-motor		motor1 = motor(&htim3,
-		   	   	  	  	   TIM_CHANNEL_1,
-						   GPIOA,
-						   GPIO_PIN_5,
-						   GPIOB,
-						   GPIO_PIN_13,
-						   0);
-motor   	motor2 = motor(&htim3,
-		   	 	  	  	   TIM_CHANNEL_2,
-						   GPIOB,
-						   GPIO_PIN_2,
-						   GPIOB,
-						   GPIO_PIN_13,
-						   0);
-motor 		motor3 = motor(&htim3,
-		   	 	  	  	   TIM_CHANNEL_3,
-						   GPIOB,
-						   GPIO_PIN_10,
-						   GPIOB,
-						   GPIO_PIN_13,
-						   0);
-motor 		motor4 = motor(&htim3,
-		   	 	  	  	   TIM_CHANNEL_4,
-						   GPIOB,
-						   GPIO_PIN_12,
-						   GPIOB,
-						   GPIO_PIN_13,
-						   0);
-
-//Initialize Receiver Structure Parameters
-FlySky 		receiver = FlySky(&htim2,TIM_CHANNEL_1,TIM_CHANNEL_2,0,0,0,0,0,0);
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint32_t start_time = HAL_GetTick();
-uint32_t current_time = HAL_GetTick();
-uint16_t period = 500;
-uint32_t next_time = current_time + period;
 
-char 	 mess[50] = {0};
-uint16_t mess_len = 0;
 /* USER CODE END 0 */
 
 /**
@@ -157,33 +110,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  //Set motor1 levels based on receiver pulse widths
-	  	  THR_lvl = 9.5427*receiver.THR_Width - 14495;
-	  	  STR_lvl = 9.3842*receiver.STR_Width - 14118;
-	  	  level_1 = THR_lvl - STR_lvl;
-	  	  level_2 = THR_lvl + STR_lvl;
-	  	  level_3 = level_1;
-	  	  level_4 = level_2;
-	  	  if ((level_1>200) | (level_1<-200))
-	  	  {
-	  	  motor1.set_level(level_1);
-	  	  motor3.set_level(level_3);
-	  	  }
-	  	  if ((level_2>200) | (level_2<-200))
-	  	  {
-	  	  motor2.set_level(level_2);
-	  	  motor4.set_level(level_4);
-	  	  }
-
-	  //Print receiver channel pulse widths at a frequency of 2Hz
-	  	  current_time = HAL_GetTick();
-	  	  if (current_time >= next_time)
-	  	  {
-	  		  mess_len = sprintf(mess, "Throttle level is %d\r\nSteering level is %d\r\n\n", receiver.THR_Width, receiver.STR_Width);
-	  		  HAL_UART_Transmit(&huart6,(uint8_t*) &mess, mess_len, 10);
-	  		  HAL_UART_Receive_IT(&huart6,(uint8_t*) &mess, 1);
-	  		  next_time = current_time+period;
-	  	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

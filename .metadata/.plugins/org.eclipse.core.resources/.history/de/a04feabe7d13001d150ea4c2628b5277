@@ -7,7 +7,6 @@
 
 
 #include "AITRIP_IR_Sensor.h"
-#include "STM32F4xx_HAL.h"
 
 
 // Default Constructor

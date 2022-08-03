@@ -1,0 +1,2 @@
+../Core/Src/AITRIP_IR_Sensor.cpp:14:1:IR_Sensor::IR_Sensor()	16	static
+../Core/Src/AITRIP_IR_Sensor.cpp:19:1:IR_Sensor::IR_Sensor(uint32_t)	16	static
