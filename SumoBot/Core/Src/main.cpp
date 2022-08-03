@@ -26,6 +26,7 @@
 #include "string.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "bno055_stm32.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -150,7 +151,10 @@ int main(void)
   MX_USART6_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-
+  // BNO055 DRIVERS BORROWED FROM THE FOLLOWING GITHUB REPO: https://github.com/ivyknob/bno055_stm32
+  bno055_assignI2C(&hi2c1);
+  bno055_setup();
+  bno055_setOperationModeNDOF();
   /* USER CODE END 2 */
 
   /* Infinite loop */
