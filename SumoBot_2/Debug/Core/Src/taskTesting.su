@@ -1,4 +1,0 @@
-../Core/Src/taskTesting.cpp:22:6:void taskTesting_init()	4	static
-../Core/Src/taskTesting.cpp:30:6:void taskTesting_run()	8	static
-../Core/Src/taskTesting.cpp:36:6:void taskTesting_S0()	4	static
-../Core/Src/taskTesting.cpp:42:6:void taskTesting_S1()	4	static

@@ -1,18 +1,47 @@
-00:02:40 **** Incremental Build of configuration Debug for project SumoBot_2 ****
+12:19:20 **** Incremental Build of configuration Debug for project SumoBot_2 ****
 make -j16 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-g++ "../Core/Src/taskTesting.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/taskTesting.d" -MT"Core/Src/taskTesting.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/taskTesting.o"
-arm-none-eabi-g++ -o "SumoBot_2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Data\School\2022 Summer_Fall\ME 507\ME 507 CODE\SumoBot_2\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SumoBot_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: SumoBot_2.elf
- 
-arm-none-eabi-size   SumoBot_2.elf 
-arm-none-eabi-objdump -h -S  SumoBot_2.elf  > "SumoBot_2.list"
-   text	   data	    bss	    dec	    hex	filename
-  30964	    128	   2172	  33264	   81f0	SumoBot_2.elf
-Finished building: default.size.stdout
- 
-Finished building: SumoBot_2.list
- 
+../Core/Src/taskTesting.cpp:15:2: error: 'task_fcn_t' does not name a type
+   15 |  task_fcn_t taskTesting::task_list[]   = {&S0,
+      |  ^~~~~~~~~~
+../Core/Src/taskTesting.cpp:19:2: error: 'task_cfg_t' does not name a type
+   19 |  task_cfg_t taskTesting::task_struct;
+      |  ^~~~~~~~~~
+../Core/Src/taskTesting.cpp: In function 'void taskTesting::init()':
+../Core/Src/taskTesting.cpp:25:16: error: 'task_struct' is not a member of 'taskTesting'
+   25 |   taskTesting::task_struct.state = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/taskTesting.cpp:26:16: error: 'task_struct' is not a member of 'taskTesting'
+   26 |   taskTesting::task_struct.runs = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/taskTesting.cpp: In function 'void taskTesting::run()':
+../Core/Src/taskTesting.cpp:34:16: error: 'task_list' is not a member of 'taskTesting'
+   34 |   taskTesting::task_list[task_struct.state]();
+      |                ^~~~~~~~~
+../Core/Src/taskTesting.cpp:34:26: error: 'task_struct' was not declared in this scope
+   34 |   taskTesting::task_list[task_struct.state]();
+      |                          ^~~~~~~~~~~
+../Core/Src/taskTesting.cpp:35:16: error: 'task_struct' is not a member of 'taskTesting'
+   35 |   taskTesting::task_struct.runs++;
+      |                ^~~~~~~~~~~
+../Core/Src/taskTesting.cpp: In function 'void S0()':
+../Core/Src/taskTesting.cpp:41:3: error: 'task_struct' was not declared in this scope
+   41 |   task_struct.state = 1;
+      |   ^~~~~~~~~~~
+../Core/Src/taskTesting.cpp: In function 'void S1()':
+../Core/Src/taskTesting.cpp:47:3: error: 'ser_port' was not declared in this scope; did you mean 'taskTesting::ser_port'?
+   47 |   ser_port << "The sample value is: " << sampleVal;
+      |   ^~~~~~~~
+      |   taskTesting::ser_port
+In file included from ../Core/Src/taskTesting.cpp:9:
+../Core/Inc/taskTesting.h:38:18: note: 'taskTesting::ser_port' declared here
+   38 |  extern stream_t ser_port;
+      |                  ^~~~~~~~
+../Core/Src/taskTesting.cpp:50:3: error: 'task_struct' was not declared in this scope
+   50 |   task_struct.state = 0;
+      |   ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:59: Core/Src/taskTesting.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
 
-00:02:42 Build Finished. 0 errors, 0 warnings. (took 1s.491ms)
+12:19:20 Build Failed. 11 errors, 0 warnings. (took 439ms)
 

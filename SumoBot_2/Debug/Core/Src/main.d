@@ -33,7 +33,8 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/IR_Sensor.h ../Core/Inc/DRV8876.h ../Core/Inc/FLYSKY_GT3A.h \
- ../Core/Inc/bno055_stm32.h ../Core/Inc/bno055.h
+ ../Core/Inc/bno055_stm32.h ../Core/Inc/bno055.h ../Core/Inc/stream.h \
+ ../Core/Inc/taskTesting.h ../Core/Inc/stream.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -73,3 +74,6 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 ../Core/Inc/FLYSKY_GT3A.h:
 ../Core/Inc/bno055_stm32.h:
 ../Core/Inc/bno055.h:
+../Core/Inc/stream.h:
+../Core/Inc/taskTesting.h:
+../Core/Inc/stream.h:

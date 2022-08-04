@@ -21,6 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
 #include "IR_Sensor.h"
 #include "DRV8876.h"
 #include "FLYSKY_GT3A.h"
@@ -28,6 +29,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "bno055_stm32.h"
+#include "stream.h"
+#include "taskTesting.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,7 +59,7 @@ UART_HandleTypeDef huart6;
 
 /* USER CODE BEGIN PV */
 
-
+extern stream_t ser_port = stream(&huart6); 	// Set up ser_port for printing
 
 int32_t THR_lvl = 0;
 int32_t STR_lvl =0;
@@ -162,6 +165,7 @@ int main(void)
   bno055_setup();
   bno055_setOperationModeNDOF();
 
+  taskTesting::init();
 
   /* USER CODE END 2 */
 
@@ -198,6 +202,7 @@ int main(void)
 	  	  	  }
 
 
+	  	  	  taskTesting::run();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -10,41 +10,43 @@
 #include "stream.h"
 
 
-// List of the state functions
-task_fcn_t taskTesting_list[]   = {&taskTesting_S0,
-								   &taskTesting_S1};
 
-// Create a struct to hold relevant information about the task
-task_cfg_t taskTesting;
+	// List of the state functions
+	task_fcn_t taskTesting::task_list[]   = {&S0,
+								&S1};
 
-uint32_t 	sampleVal = 55;
+	// Create a struct to hold relevant information about the task
+	task_cfg_t taskTesting::task_struct;
 
-void taskTesting_init(void)
-{
-	taskTesting.state = 0;
-	taskTesting.runs = 0;
+	uint32_t 	sampleVal = 55;
 
-}
-
-// Run the current state, then increment the run counter.
-void taskTesting_run(void)
-{
-	taskTesting_list[taskTesting.state]();
-	taskTesting.runs++;
-}
-
-void taskTesting_S0(void)
-{
-	// Read from all the sensors
-	taskTesting.state = 1;
-}
-
-void taskTesting_S1(void)
-{
-	// print results
+	void taskTesting::init(void)
+	{
+		taskTesting::task_struct.state = 0;
+		taskTesting::task_struct.runs = 0;
 
 
-	// Return to the read state (0)
-	taskTesting.state = 0;
+	}
 
-}
+	// Run the current state, then increment the run counter.
+	void taskTesting::run(void)
+	{
+		taskTesting::task_list[task_struct.state]();
+		taskTesting::task_struct.runs++;
+	}
+
+	void S0(void)
+	{
+		// Read from all the sensors
+		task_struct.state = 1;
+	}
+
+	void S1(void)
+	{
+		// print results
+		ser_port << "The sample value is: " << sampleVal;
+
+		// Return to the read state (0)
+		task_struct.state = 0;
+
+	}
