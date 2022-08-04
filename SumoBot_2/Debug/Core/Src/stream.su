@@ -1,0 +1,12 @@
+../Core/Src/stream.cpp:10:1:stream::stream(UART_HandleTypeDef*)	16	static
+../Core/Src/stream.cpp:16:10:stream& stream::operator<<(uint8_t)	24	static
+../Core/Src/stream.cpp:23:10:stream& stream::operator<<(int8_t)	24	static
+../Core/Src/stream.cpp:30:10:stream& stream::operator<<(uint16_t)	24	static
+../Core/Src/stream.cpp:37:10:stream& stream::operator<<(int16_t)	24	static
+../Core/Src/stream.cpp:44:10:stream& stream::operator<<(uint32_t)	24	static
+../Core/Src/stream.cpp:51:10:stream& stream::operator<<(int32_t)	24	static
+../Core/Src/stream.cpp:58:10:stream& stream::operator<<(unsigned int)	24	static
+../Core/Src/stream.cpp:65:10:stream& stream::operator<<(int)	24	static
+../Core/Src/stream.cpp:72:10:stream& stream::operator<<(uint64_t)	32	static
+../Core/Src/stream.cpp:79:10:stream& stream::operator<<(int64_t)	32	static
+../Core/Src/stream.cpp:86:10:stream& stream::operator<<(const char*)	24	static

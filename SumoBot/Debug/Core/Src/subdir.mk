@@ -12,9 +12,9 @@ C_SRCS += \
 ../Core/Src/system_stm32f4xx.c 
 
 CPP_SRCS += \
-../Core/Src/AITRIP_IR_Sensor.cpp \
 ../Core/Src/DRV8876.cpp \
 ../Core/Src/FLYSKY_GT3A.cpp \
+../Core/Src/IR_Sensor.cpp \
 ../Core/Src/main.cpp \
 ../Core/Src/task.cpp 
 
@@ -26,9 +26,9 @@ C_DEPS += \
 ./Core/Src/system_stm32f4xx.d 
 
 OBJS += \
-./Core/Src/AITRIP_IR_Sensor.o \
 ./Core/Src/DRV8876.o \
 ./Core/Src/FLYSKY_GT3A.o \
+./Core/Src/IR_Sensor.o \
 ./Core/Src/main.o \
 ./Core/Src/stm32f4xx_hal_msp.o \
 ./Core/Src/stm32f4xx_it.o \
@@ -38,9 +38,9 @@ OBJS += \
 ./Core/Src/task.o 
 
 CPP_DEPS += \
-./Core/Src/AITRIP_IR_Sensor.d \
 ./Core/Src/DRV8876.d \
 ./Core/Src/FLYSKY_GT3A.d \
+./Core/Src/IR_Sensor.d \
 ./Core/Src/main.d \
 ./Core/Src/task.d 
 
@@ -54,7 +54,7 @@ Core/Src/%.o Core/Src/%.su: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/AITRIP_IR_Sensor.d ./Core/Src/AITRIP_IR_Sensor.o ./Core/Src/AITRIP_IR_Sensor.su ./Core/Src/DRV8876.d ./Core/Src/DRV8876.o ./Core/Src/DRV8876.su ./Core/Src/FLYSKY_GT3A.d ./Core/Src/FLYSKY_GT3A.o ./Core/Src/FLYSKY_GT3A.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su ./Core/Src/task.d ./Core/Src/task.o ./Core/Src/task.su
+	-$(RM) ./Core/Src/DRV8876.d ./Core/Src/DRV8876.o ./Core/Src/DRV8876.su ./Core/Src/FLYSKY_GT3A.d ./Core/Src/FLYSKY_GT3A.o ./Core/Src/FLYSKY_GT3A.su ./Core/Src/IR_Sensor.d ./Core/Src/IR_Sensor.o ./Core/Src/IR_Sensor.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su ./Core/Src/task.d ./Core/Src/task.o ./Core/Src/task.su
 
 .PHONY: clean-Core-2f-Src
 

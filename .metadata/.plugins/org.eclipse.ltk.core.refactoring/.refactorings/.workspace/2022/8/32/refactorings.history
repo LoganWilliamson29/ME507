@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SumoBot_testing&apos; to &apos;SumoBot_2&apos;" description="Rename resource &apos;SumoBot_testing&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SumoBot_testing" name="SumoBot_2" stamp="1659594233051" updateReferences="true"/>
+</session>
