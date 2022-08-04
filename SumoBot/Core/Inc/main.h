@@ -87,8 +87,8 @@ void Error_Handler(void);
 #define MOT3_PH_GPIO_Port GPIOB
 #define MOT4_PH_Pin GPIO_PIN_12
 #define MOT4_PH_GPIO_Port GPIOB
-#define nSLEEP_Pin GPIO_PIN_13
-#define nSLEEP_GPIO_Port GPIOB
+#define MOTORnSLEEP_Pin GPIO_PIN_13
+#define MOTORnSLEEP_GPIO_Port GPIOB
 #define LS4_Pin GPIO_PIN_14
 #define LS4_GPIO_Port GPIOB
 #define LS3_Pin GPIO_PIN_15

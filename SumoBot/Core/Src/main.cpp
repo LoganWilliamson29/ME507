@@ -133,7 +133,7 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
-   /* USER CODE END Init */
+  /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
@@ -487,7 +487,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(MOT1_PH_GPIO_Port, MOT1_PH_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, MOT2_PH_Pin|MOT3_PH_Pin|MOT4_PH_Pin|nSLEEP_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, MOT2_PH_Pin|MOT3_PH_Pin|MOT4_PH_Pin|MOTORnSLEEP_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : FAULT_n_Pin */
   GPIO_InitStruct.Pin = FAULT_n_Pin;
@@ -502,8 +502,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(MOT1_PH_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : MOT2_PH_Pin MOT3_PH_Pin MOT4_PH_Pin nSLEEP_Pin */
-  GPIO_InitStruct.Pin = MOT2_PH_Pin|MOT3_PH_Pin|MOT4_PH_Pin|nSLEEP_Pin;
+  /*Configure GPIO pins : MOT2_PH_Pin MOT3_PH_Pin MOT4_PH_Pin MOTORnSLEEP_Pin */
+  GPIO_InitStruct.Pin = MOT2_PH_Pin|MOT3_PH_Pin|MOT4_PH_Pin|MOTORnSLEEP_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
