@@ -884,8 +884,8 @@ Discarded input sections
                 0x0000000000000000       0x38 ./Core/Src/stopwatch.o
  .text._ZN9stopwatch3endEv
                 0x0000000000000000       0x5c ./Core/Src/stopwatch.o
- .debug_info    0x0000000000000000      0x97d ./Core/Src/stopwatch.o
- .debug_abbrev  0x0000000000000000      0x25f ./Core/Src/stopwatch.o
+ .debug_info    0x0000000000000000      0x97e ./Core/Src/stopwatch.o
+ .debug_abbrev  0x0000000000000000      0x247 ./Core/Src/stopwatch.o
  .debug_aranges
                 0x0000000000000000       0x30 ./Core/Src/stopwatch.o
  .debug_ranges  0x0000000000000000       0x20 ./Core/Src/stopwatch.o
@@ -1396,96 +1396,185 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x47 ./Core/Src/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0x295 ./Core/Src/system_stm32f4xx.o
  .debug_macro   0x0000000000000000      0x126 ./Core/Src/system_stm32f4xx.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .group         0x0000000000000000        0xc ./Core/Src/task.o
- .text          0x0000000000000000        0x0 ./Core/Src/task.o
- .data          0x0000000000000000        0x0 ./Core/Src/task.o
- .bss           0x0000000000000000        0x0 ./Core/Src/task.o
- .data.task_list
-                0x0000000000000000        0x8 ./Core/Src/task.o
- .bss.task      0x0000000000000000        0x8 ./Core/Src/task.o
- .text.task_init
-                0x0000000000000000       0x20 ./Core/Src/task.o
- .text.task_run
-                0x0000000000000000       0x28 ./Core/Src/task.o
- .text.task_S0  0x0000000000000000        0xe ./Core/Src/task.o
- .text.task_S1  0x0000000000000000        0xe ./Core/Src/task.o
- .debug_info    0x0000000000000000      0x15e ./Core/Src/task.o
- .debug_abbrev  0x0000000000000000       0xc8 ./Core/Src/task.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .group         0x0000000000000000        0xc ./Core/Src/taskTesting.o
+ .text          0x0000000000000000        0x0 ./Core/Src/taskTesting.o
+ .data          0x0000000000000000        0x0 ./Core/Src/taskTesting.o
+ .bss           0x0000000000000000        0x0 ./Core/Src/taskTesting.o
+ .data.taskTesting_list
+                0x0000000000000000        0x8 ./Core/Src/taskTesting.o
+ .bss.taskTesting
+                0x0000000000000000        0x8 ./Core/Src/taskTesting.o
+ .data.sampleVal
+                0x0000000000000000        0x4 ./Core/Src/taskTesting.o
+ .text.taskTesting_init
+                0x0000000000000000       0x20 ./Core/Src/taskTesting.o
+ .text.taskTesting_run
+                0x0000000000000000       0x28 ./Core/Src/taskTesting.o
+ .text.taskTesting_S0
+                0x0000000000000000       0x18 ./Core/Src/taskTesting.o
+ .text.taskTesting_S1
+                0x0000000000000000       0x18 ./Core/Src/taskTesting.o
+ .debug_info    0x0000000000000000      0x228 ./Core/Src/taskTesting.o
+ .debug_abbrev  0x0000000000000000       0xef ./Core/Src/taskTesting.o
  .debug_aranges
-                0x0000000000000000       0x38 ./Core/Src/task.o
- .debug_ranges  0x0000000000000000       0x28 ./Core/Src/task.o
- .debug_macro   0x0000000000000000      0x1a9 ./Core/Src/task.o
- .debug_macro   0x0000000000000000      0xb50 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x22 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x4c ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x1e ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x94 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x3c ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x34 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x16 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x57 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x97 ./Core/Src/task.o
- .debug_macro   0x0000000000000000      0x364 ./Core/Src/task.o
- .debug_macro   0x0000000000000000      0x104 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x10 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x16 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x43 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x34 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x10 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x58 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x71 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x16 ./Core/Src/task.o
- .debug_macro   0x0000000000000000      0x12a ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x10 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x6a ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x1c ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x52 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x22 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x10 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x52 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0xd5 ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x1c ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x3d ./Core/Src/task.o
- .debug_macro   0x0000000000000000       0x16 ./Core/Src/task.o
- .debug_macro   0x0000000000000000      0x137 ./Core/Src/task.o
- .debug_line    0x0000000000000000      0x5e6 ./Core/Src/task.o
- .debug_str     0x0000000000000000     0x777f ./Core/Src/task.o
- .comment       0x0000000000000000       0x51 ./Core/Src/task.o
- .debug_frame   0x0000000000000000       0x8c ./Core/Src/task.o
+                0x0000000000000000       0x38 ./Core/Src/taskTesting.o
+ .debug_ranges  0x0000000000000000       0x28 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x380 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0xb50 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x4c ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x1e ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x94 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x3c ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x34 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x16 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x57 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x97 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x364 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x104 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x10 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x16 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x43 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x34 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x10 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x58 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x71 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x16 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x12a ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x10 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x6a ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x1c ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x52 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x10 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x52 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0xd5 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x1c ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x3d ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x16 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x137 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x10 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x2a7 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x2e ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x28 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x1c ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x103 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x1df ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x1c ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0xd9 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000     0x102d ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x11f ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000     0xb953 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x6d ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000     0x367e ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x56 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x447 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x9fe ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x115 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x11b ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0xa5 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x15f ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x287 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x5f ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x236 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x9e1 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x38b ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x17d ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0xf9 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x132 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x264 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x2e ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x1b5 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0xd6 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x11a ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x85 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x89 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x8e6 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000       0x47 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x295 ./Core/Src/taskTesting.o
+ .debug_macro   0x0000000000000000      0x126 ./Core/Src/taskTesting.o
+ .debug_line    0x0000000000000000      0x9b4 ./Core/Src/taskTesting.o
+ .debug_str     0x0000000000000000    0x97e90 ./Core/Src/taskTesting.o
+ .comment       0x0000000000000000       0x51 ./Core/Src/taskTesting.o
+ .debug_frame   0x0000000000000000       0x8c ./Core/Src/taskTesting.o
  .ARM.attributes
-                0x0000000000000000       0x34 ./Core/Src/task.o
+                0x0000000000000000       0x34 ./Core/Src/taskTesting.o
  .text          0x0000000000000000       0x14 ./Core/Startup/startup_stm32f411ceux.o
  .data          0x0000000000000000        0x0 ./Core/Startup/startup_stm32f411ceux.o
  .bss           0x0000000000000000        0x0 ./Core/Startup/startup_stm32f411ceux.o
@@ -4667,7 +4756,7 @@ LOAD ./Core/Src/stream.o
 LOAD ./Core/Src/syscalls.o
 LOAD ./Core/Src/sysmem.o
 LOAD ./Core/Src/system_stm32f4xx.o
-LOAD ./Core/Src/task.o
+LOAD ./Core/Src/taskTesting.o
 LOAD ./Core/Startup/startup_stm32f411ceux.o
 LOAD ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
 LOAD ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
@@ -5671,49 +5760,49 @@ LOAD c:/program files/st/stm32cubeide_1.9.0/stm32cubeide/plugins/com.st.stm32cub
 LOAD c:/program files/st/stm32cubeide_1.9.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD c:/program files/st/stm32cubeide_1.9.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_info     0x0000000000000000    0x147e9
+.debug_info     0x0000000000000000    0x147ea
  .debug_info    0x0000000000000000      0xa84 ./Core/Src/DRV8876.o
  .debug_info    0x0000000000000a84      0xa50 ./Core/Src/FLYSKY_GT3A.o
  .debug_info    0x00000000000014d4      0x960 ./Core/Src/bno055.o
- .debug_info    0x0000000000001e34     0x274b ./Core/Src/main.o
- .debug_info    0x000000000000457f     0x1698 ./Core/Src/stm32f4xx_hal_msp.o
- .debug_info    0x0000000000005c17      0x65d ./Core/Src/stm32f4xx_it.o
- .debug_info    0x0000000000006274      0x6e0 ./Core/Src/syscalls.o
- .debug_info    0x0000000000006954      0x171 ./Core/Src/sysmem.o
- .debug_info    0x0000000000006ac5      0x54f ./Core/Src/system_stm32f4xx.o
- .debug_info    0x0000000000007014       0x22 ./Core/Startup/startup_stm32f411ceux.o
- .debug_info    0x0000000000007036      0x90d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_info    0x0000000000007943      0xd68 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_info    0x00000000000086ab      0xd8b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_info    0x0000000000009436      0x947 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
- .debug_info    0x0000000000009d7d      0x78e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_info    0x000000000000a50b     0x260f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_info    0x000000000000cb1a      0x98d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_info    0x000000000000d4a7     0x2bb6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_info    0x000000000001005d     0x15d8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_info    0x0000000000011635     0x31b4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
+ .debug_info    0x0000000000001e34     0x274c ./Core/Src/main.o
+ .debug_info    0x0000000000004580     0x1698 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_info    0x0000000000005c18      0x65d ./Core/Src/stm32f4xx_it.o
+ .debug_info    0x0000000000006275      0x6e0 ./Core/Src/syscalls.o
+ .debug_info    0x0000000000006955      0x171 ./Core/Src/sysmem.o
+ .debug_info    0x0000000000006ac6      0x54f ./Core/Src/system_stm32f4xx.o
+ .debug_info    0x0000000000007015       0x22 ./Core/Startup/startup_stm32f411ceux.o
+ .debug_info    0x0000000000007037      0x90d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_info    0x0000000000007944      0xd68 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_info    0x00000000000086ac      0xd8b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_info    0x0000000000009437      0x947 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
+ .debug_info    0x0000000000009d7e      0x78e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_info    0x000000000000a50c     0x260f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_info    0x000000000000cb1b      0x98d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_info    0x000000000000d4a8     0x2bb6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_info    0x000000000001005e     0x15d8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_info    0x0000000000011636     0x31b4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
 
-.debug_abbrev   0x0000000000000000     0x2ad5
+.debug_abbrev   0x0000000000000000     0x2abd
  .debug_abbrev  0x0000000000000000      0x25e ./Core/Src/DRV8876.o
  .debug_abbrev  0x000000000000025e      0x24c ./Core/Src/FLYSKY_GT3A.o
  .debug_abbrev  0x00000000000004aa      0x212 ./Core/Src/bno055.o
- .debug_abbrev  0x00000000000006bc      0x474 ./Core/Src/main.o
- .debug_abbrev  0x0000000000000b30      0x226 ./Core/Src/stm32f4xx_hal_msp.o
- .debug_abbrev  0x0000000000000d56      0x177 ./Core/Src/stm32f4xx_it.o
- .debug_abbrev  0x0000000000000ecd      0x1b3 ./Core/Src/syscalls.o
- .debug_abbrev  0x0000000000001080       0xbb ./Core/Src/sysmem.o
- .debug_abbrev  0x000000000000113b      0x116 ./Core/Src/system_stm32f4xx.o
- .debug_abbrev  0x0000000000001251       0x12 ./Core/Startup/startup_stm32f411ceux.o
- .debug_abbrev  0x0000000000001263      0x23e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_abbrev  0x00000000000014a1      0x204 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_abbrev  0x00000000000016a5      0x316 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_abbrev  0x00000000000019bb      0x21b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
- .debug_abbrev  0x0000000000001bd6      0x1c4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_abbrev  0x0000000000001d9a      0x2a8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_abbrev  0x0000000000002042      0x2aa ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_abbrev  0x00000000000022ec      0x26e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_abbrev  0x000000000000255a      0x276 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_abbrev  0x00000000000027d0      0x305 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
+ .debug_abbrev  0x00000000000006bc      0x45c ./Core/Src/main.o
+ .debug_abbrev  0x0000000000000b18      0x226 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_abbrev  0x0000000000000d3e      0x177 ./Core/Src/stm32f4xx_it.o
+ .debug_abbrev  0x0000000000000eb5      0x1b3 ./Core/Src/syscalls.o
+ .debug_abbrev  0x0000000000001068       0xbb ./Core/Src/sysmem.o
+ .debug_abbrev  0x0000000000001123      0x116 ./Core/Src/system_stm32f4xx.o
+ .debug_abbrev  0x0000000000001239       0x12 ./Core/Startup/startup_stm32f411ceux.o
+ .debug_abbrev  0x000000000000124b      0x23e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_abbrev  0x0000000000001489      0x204 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_abbrev  0x000000000000168d      0x316 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_abbrev  0x00000000000019a3      0x21b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
+ .debug_abbrev  0x0000000000001bbe      0x1c4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_abbrev  0x0000000000001d82      0x2a8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_abbrev  0x000000000000202a      0x2aa ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_abbrev  0x00000000000022d4      0x26e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_abbrev  0x0000000000002542      0x276 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_abbrev  0x00000000000027b8      0x305 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
 
 .debug_aranges  0x0000000000000000     0x1228
  .debug_aranges

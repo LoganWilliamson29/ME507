@@ -55,6 +55,9 @@ TIM_HandleTypeDef htim3;
 UART_HandleTypeDef huart6;
 
 /* USER CODE BEGIN PV */
+
+
+
 int32_t THR_lvl = 0;
 int32_t STR_lvl =0;
 int32_t level_1 = 0;
@@ -103,6 +106,8 @@ motor 		motor4 = motor(&htim3,
 
 //Initialize Receiver Structure Parameters
 FlySky 		receiver = FlySky(&htim2,TIM_CHANNEL_1,TIM_CHANNEL_2,0,0,0,0,0,0);
+
+
 
 /* USER CODE END PFP */
 
@@ -157,6 +162,7 @@ int main(void)
   bno055_setup();
   bno055_setOperationModeNDOF();
 
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -190,6 +196,8 @@ int main(void)
 	  	  		  HAL_UART_Receive_IT(&huart6,(uint8_t*) &mess, 1);
 	  	  		  next_time = current_time+period;
 	  	  	  }
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

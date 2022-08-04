@@ -1,0 +1,43 @@
+/*
+ * testingTask.cpp
+ *
+ *  Created on: Jul 28, 2022
+ *      Author: caleb
+ */
+
+
+#include <testingTask.h>
+
+// List of the state functions
+task_fcn_t testingTask_list[]   = {&testingTask_S0,
+							&testingTask_S1};
+
+// Create a struct to hold relevant information about the task
+task_cfg_t testingTask;
+
+
+void testingTask_init(void)
+{
+	testingTask.state = 0;
+	testingTask.runs = 0;
+}
+
+// Run the current state, then increment the run counter.
+void task_run(void)
+{
+	testingTask_list[testingTask.state]();
+	testingTask.runs++;
+}
+
+void task_S0(void)
+{
+	// Read from all the sensors
+	testingTask.state = 1;
+}
+
+void task_S1(void)
+{
+	// print results
+	testingTask.state = 0;
+
+}
