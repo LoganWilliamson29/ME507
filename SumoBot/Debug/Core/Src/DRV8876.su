@@ -1,5 +1,0 @@
-../Core/Src/DRV8876.cpp:12:1:motor::motor()	16	static
-../Core/Src/DRV8876.cpp:18:1:motor::motor(TIM_HandleTypeDef*, uint16_t, GPIO_TypeDef*, uint16_t, GPIO_TypeDef*, uint16_t, int16_t)	24	static
-../Core/Src/DRV8876.cpp:29:6:void motor::enable()	16	static
-../Core/Src/DRV8876.cpp:36:6:void motor::disable()	16	static
-../Core/Src/DRV8876.cpp:44:6:void motor::set_level(int32_t)	16	static

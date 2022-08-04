@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="nSLEEP"/>
 			<item value="receiver-&gt;"/>
 		</list>
 		<list key="replacehistory">

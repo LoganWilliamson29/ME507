@@ -1,4 +1,0 @@
-../Core/Src/task.cpp:19:6:void task_init()	4	static
-../Core/Src/task.cpp:26:6:void task_run()	8	static
-../Core/Src/task.cpp:32:6:void task_S0()	4	static
-../Core/Src/task.cpp:38:6:void task_S1()	4	static
